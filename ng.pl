@@ -47,6 +47,13 @@ noun_group(NG) -->
 	adj_group(AG), nominal(NOM),
 	{append(AG, NOM, NG)}.
 
+noun_group(NG) -->
+    pronoun_special(PRP), adj_group(AG), nominal(NOM),
+	{append([PRP | AG], NOM, NG)}.
+noun_group(NG) -->
+    pronoun_special(PRP), nominal(NOM),
+	{append([PRP], NOM, NG)}.
+
 % Nominal expressions
 nominal([NOUN | NOM]) --> noun(NOUN), nominal(NOM).
 nominal([N]) --> noun(N).
@@ -90,6 +97,8 @@ plural_proper_noun(Pair) --> [Pair], { Pair = (_, 'NNPS') }.
 numerical_cardinal(Pair) --> [Pair], { Pair = (_, 'CD') }.
 
 pronoun(Pair) --> [Pair], { Pair = (_, 'PRP') }.
+
+pronoun_special(Pair) --> [Pair], { Pair = (_, 'PRP$') }.
 
 genitive(Pair) --> [Pair], { Pair = (_, 'POS') }.
 
