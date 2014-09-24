@@ -1,4 +1,4 @@
-Lab 2: Manual Rules something
+Lab 2: Extracting noun groups using manually written rules
 ======================
 Report by ***Yoav Zimmerman*** for EDAN20 Fall 2014
 
